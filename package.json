@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/meeeww/yuumisuperviser/issues"
   },
-  "homepage": "https://github.com/meeeww/yuumisuperviser#readme"
+  "homepage": "https://github.com/meeeww/yuumisuperviser#readme",
+  "dependencies": {
+    "bootstrap-icons": "^1.9.1"
+  }
 }

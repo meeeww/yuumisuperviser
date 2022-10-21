@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <tittle></tittle>
         <link rel="stylesheet" href="styles/login.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     </head>
     <body>
         <div class="box">
@@ -11,6 +12,7 @@
                 <h2>Yuumi Superviser</h2>
                 <div class="inputBox">
                     <input type="user" required="required">
+                    
                     <span>Username</span>
                     <i></i>
                 </div>
