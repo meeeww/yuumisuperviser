@@ -2,12 +2,29 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <tittle>Login</tittle>
-        <link rel="stylesheet" href="src/styles/login.css">
+        <tittle></tittle>
+        <link rel="stylesheet" href="styles/login.css">
     </head>
     <body>
         <div class="box">
-            <div class="form"></div>
+            <div class="form">
+                <h2>Sign in</h2>
+                <div class="inputBox">
+                    <input type="user" required="required">
+                    <span>Username</span>
+                    <i></i>
+                </div>
+                <div class="inputBox">
+                    <input type="password" required="required">
+                    <span>Password</span>
+                    <i></i>
+                </div>
+                <div class="links">
+                    <a href="#">Forgot Password</a>
+                    <a href="#">Sign up</a>
+                </div>
+                <input type="submit" value="Login">
+            </div>
         </div>
     </body>
 </html>
