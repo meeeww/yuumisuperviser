@@ -8,7 +8,7 @@
     <body>
         <div class="box">
             <div class="form">
-                <h2>Sign in</h2>
+                <h2>Yuumi Superviser</h2>
                 <div class="inputBox">
                     <input type="user" required="required">
                     <span>Username</span>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="links">
                     <a href="#">Forgot Password</a>
-                    <a href="#">Sign up</a>
+                    <a href="#">Sign Up</a>
                 </div>
                 <input type="submit" value="Login">
             </div>

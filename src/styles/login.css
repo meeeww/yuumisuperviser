@@ -1,10 +1,10 @@
-@import url("");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@900&display=swap");
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Roboto', sans-serif;;
 }
 body{
     display: flex;
@@ -156,7 +156,9 @@ input[type="submit"]{
     background: #e44f9c;
     padding: 11px 25px;
     width: 100px;
-    margin-top: 10px;
+    margin-top: 40px;
+    margin-left: 35%;
+    margin-right:25%;
     border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
