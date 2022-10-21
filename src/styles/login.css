@@ -13,3 +13,11 @@ body{
     min-height: 100vh;
     background: #23242a;
 }
+
+.box{
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background: #1c1c1c;
+    border-radius: 8px;
+}
