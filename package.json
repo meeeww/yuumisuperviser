@@ -2,9 +2,10 @@
   "name": "yuumisuperviser",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/meeeww/yuumisuperviser#readme",
   "dependencies": {
-    "bootstrap-icons": "^1.9.1"
+    "bootstrap": "^5.2.2",
+    "bootstrap-icons": "^1.9.1",
+    "electron": "^21.2.0"
   }
 }
