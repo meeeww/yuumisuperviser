@@ -37,7 +37,7 @@ body{
 body.dark{
     --body-color: #E4E9F7;
     --sidebar-color: #FFF;
-    --primary-color: #695CFE;
+    --primary-color: #e44f9c;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
@@ -117,6 +117,12 @@ header .image-text .name {
     margin-top: 2px;
     font-size: 18px;
     font-weight: 600;
+}
+
+header .image-text .rol{
+    font-size: 16px;
+    margin-top: -2px;
+    display: block;
 }
 
 header .image-text .profession{

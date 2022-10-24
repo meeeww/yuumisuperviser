@@ -26,6 +26,63 @@
 
         <div class="text logo-text">
           <span class="name">Bienvenido</span>
+          <span class="rol" style="color: <?php
+            switch($user->getRol()){
+              case 0:
+                echo "#edbec2";
+                break;
+              case 1:
+                echo "#ed8c94";
+                break;
+              case 2:
+                echo "#eb50a2";
+                break;
+              case 3:
+                echo "#f72d37";
+                break;
+              case 4:
+                echo "#fa000c";
+                break;
+              case 5:
+                echo "#6e0308";
+                break;
+              case 6:
+                echo "#26bda1";
+                break;
+              case 7:
+                echo "#148ff5";
+                break;
+            }
+          ?>;">
+            <?php
+            switch($user->getRol()){
+              case 0:
+                echo "Free";
+                break;
+              case 1:
+                echo "Verified";
+                break;
+              case 2:
+                echo "Member";
+                break;
+              case 3:
+                echo "Player";
+                break;
+              case 4:
+                echo "Coach";
+                break;
+              case 5:
+                echo "Team";
+                break;
+              case 6:
+                echo "Tester";
+                break;
+              case 7:
+                echo "Admin";
+                break;
+            }
+            ?>
+            </span>
           <span class="profession"><?php echo $user->getNombre();   ?></span>
         </div>
       </div>
@@ -60,7 +117,7 @@
           </li>
 
           <li class="nav-link">
-          <a href="http://localhost/YuumiSuperviser/analysis">
+          <a href="#">
               <i class='bx bxs-analyse icon'></i>
               <span class="text nav-text">Analysis</span>
             </a>

@@ -99,7 +99,7 @@ if (!empty($_POST["btningresar"])) {
             date_default_timezone_set('Europe/Madrid');
             $date = date('m/d/Y', time());
             $sql = $conexionsignup->query("INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `correo_usuario`, `contrasena`, `fecha_registro`, `tipo`, `suscripcion`, 
-            `suscripcion_final`, `email_verificado`) VALUES (NULL, '$usuario', '$email', '$hash', '$date', NULL, NULL, NULL, '0')");
+            `suscripcion_final`, `email_verificado`) VALUES (NULL, '$usuario', '$email', '$hash', '$date', '0', NULL, NULL, '0')");
             #########################
             echo '<div class="alert hide">';
             echo '<span class="fas fa-check-circle"></span>';

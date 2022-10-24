@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if(!$_SESSION["logged"]){
+    header('Location: ' . base_url());
+  }
+?>
+
 <!DOCTYPE html>
 <!-- Coding by CodingLab | www.codinglabweb.com -->
 <html lang="en">
@@ -8,7 +15,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!----======== CSS ======== -->
-  <link rel="stylesheet" href="src/styles/analyze.css">
+  <link rel="stylesheet" href="../styles/analyze.css">
+  
 
   <!----===== Boxicons CSS ===== -->
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -20,6 +28,7 @@
 <body>
   <nav class="sidebar close">
     <header>
+
       <div class="image-text">
         <span class="image">
           <img src="https://static.wikia.nocookie.net/leagueoflegendsoficial/images/7/70/YuumiSquare.png/revision/latest/smart/width/250/height/250?cb=20190511165731&path-prefix=es" alt="asd">
@@ -138,7 +147,71 @@
     <div class="text">Yuumi Superviser</div>
 
     <body>
+      <div class="container">
 
+      <div class="card">
+          <div class="left-column background1-left-column">
+            <h6>Positioning Map</h6>
+            <h2>Individual</h2>
+            <i class="fa fa-github"></i>
+          </div>
+
+          <div class="right-column">
+            <div>
+              <h4>Cooldown</h4>
+              <h6>10 Minutes</h6>
+
+            </div>
+            <h2>Player's positioning</h2>
+            <p>With this script you will be able to find out where the player positions the most
+              to determine the player pathing.
+            </p>
+            <button class="button background1-left-column">Begin</button>
+          </div>
+
+        </div>
+<div class="card">
+          <div class="left-column background1-left-column">
+            <h6>Positioning Map</h6>
+            <h2>Individual</h2>
+            <i class="fa fa-github"></i>
+          </div>
+
+          <div class="right-column">
+            <div>
+              <h4>Cooldown</h4>
+              <h6>10 Minutes</h6>
+
+            </div>
+            <h2>Player's positioning</h2>
+            <p>With this script you will be able to find out where the player positions the most
+              to determine the player pathing.
+            </p>
+            <button class="button background1-left-column">Begin</button>
+          </div>
+
+        </div>
+        <div class="card">
+          <div class="left-column background2-left-column">
+            <h6>Programación</h6>
+            <h2>Android</h2>
+            <i class="fa fa-android" aria-hidden="true"></i>
+          </div>
+
+          <div class="right-column">
+            <div>
+              <h4>Dificultad</h4>
+              <h6>Media - Alta</h6>
+            </div>
+            <h2>Flutter en 1 año</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, sintLorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Harum, sint??</p>
+            <button class="button background2-left-column">Empezar</button>
+          </div>
+          
+
+        </div>
+      </div>
 
       <div id="map">
       </div>
@@ -174,7 +247,7 @@
   });
 </script>
 <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
-<script type="text/javascript" src="src/heatmap/analyze.js"></script>
+<script type="text/javascript" src="../heatmap/analyze.js"></script>
 </body>
 
 </html>

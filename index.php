@@ -45,3 +45,4 @@ if(isset($_SESSION['user'])){
 }else{
     include_once 'src/vistas/login.php';
 }
+?>
