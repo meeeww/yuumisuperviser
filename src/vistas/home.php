@@ -117,7 +117,7 @@
           </li>
 
           <li class="nav-link">
-          <a href="#">
+          <a href="src/vistas/analyze.php">
               <i class='bx bxs-analyse icon'></i>
               <span class="text nav-text">Analysis</span>
             </a>
@@ -165,7 +165,7 @@
         </li>
         <li class="cerrar-sesion">
           <a href="src/includes/logout.php">
-            <i class='bx bxs-exit icon' ></i>
+            <i class='bx bxs-exit icon'></i>
             <span class="text nav-text">Logout</span>
           </a>
         </li>

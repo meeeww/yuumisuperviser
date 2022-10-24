@@ -51,7 +51,7 @@
 
         <ul class="menu-links">
           <li class="nav-link">
-            <a href="#">
+            <a href="/yuumisuperviser">
               <i class='bx bxs-home icon'></i>
               <span class="text nav-text">Home</span>
             </a>
@@ -119,7 +119,7 @@
           </a>
         </li>
         <li class="cerrar-sesion">
-          <a href="src/includes/logoutOtros.php">
+          <a href="../includes/logoutOtros.php">
             <i class='bx bxs-exit icon'></i>
             <span class="text nav-text">Logout</span>
           </a>
