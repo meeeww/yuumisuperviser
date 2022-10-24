@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!$_SESSION["logged"]){
-    header('Location: ' . base_url());
+    header('Location: /yuumisuperviser');
   }
 ?>
 
@@ -118,8 +118,8 @@
             <span class="text nav-text">Settings</span>
           </a>
         </li>
-        <li class="">
-          <a href="#">
+        <li class="cerrar-sesion">
+          <a href="src/includes/logoutOtros.php">
             <i class='bx bxs-exit icon'></i>
             <span class="text nav-text">Logout</span>
           </a>
