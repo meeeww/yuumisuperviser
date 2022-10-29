@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-10-29T16:01:25.192Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 OPR/91.0.4516.95" etag="pxrEKq1quUm9YB2n25iv" version="20.4.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-10-29T16:11:05.542Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 OPR/91.0.4516.95" etag="x5JXOo0KwGDCVkDMRUNq" version="20.4.2" type="github">
   <diagram id="DUSgfuvYs4gclIhrS_DR" name="Página-1">
     <mxGraphModel dx="1151" dy="630" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#333333" math="0" shadow="0">
       <root>
@@ -63,13 +63,13 @@
         <mxCell id="kDSPNa0C3np8TZi5d1Lt-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="kDSPNa0C3np8TZi5d1Lt-21" target="kDSPNa0C3np8TZi5d1Lt-26">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="kDSPNa0C3np8TZi5d1Lt-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="kDSPNa0C3np8TZi5d1Lt-21" target="kDSPNa0C3np8TZi5d1Lt-30">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="kDSPNa0C3np8TZi5d1Lt-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="kDSPNa0C3np8TZi5d1Lt-21" target="kDSPNa0C3np8TZi5d1Lt-28">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="kDSPNa0C3np8TZi5d1Lt-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="kDSPNa0C3np8TZi5d1Lt-21" target="kDSPNa0C3np8TZi5d1Lt-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kDSPNa0C3np8TZi5d1Lt-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="kDSPNa0C3np8TZi5d1Lt-21" target="kDSPNa0C3np8TZi5d1Lt-30">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="kDSPNa0C3np8TZi5d1Lt-21" value="Suscripciones" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
@@ -84,14 +84,17 @@
         <mxCell id="kDSPNa0C3np8TZi5d1Lt-26" value="id_usuario" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="430" y="290" width="90" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="kDSPNa0C3np8TZi5d1Lt-28" value="id_usuario" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="kDSPNa0C3np8TZi5d1Lt-28" value="tipo" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="430" y="350" width="90" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="kDSPNa0C3np8TZi5d1Lt-29" value="id_usuario" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="560" y="350" width="90" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="kDSPNa0C3np8TZi5d1Lt-30" value="id_usuario" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="kDSPNa0C3np8TZi5d1Lt-29" value="fecha_final" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="560" y="290" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kDSPNa0C3np8TZi5d1Lt-30" value="fecha_inicio" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="410" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kDSPNa0C3np8TZi5d1Lt-36" value="activo" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="350" width="90" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
