@@ -25,12 +25,12 @@
 
 
 .background1-left-column{
-	background: linear-gradient(180deg,#21c8f6,#637bff);
+	background: linear-gradient(180deg,#FF97D9,#E44F9C);
 }
 
 
 .background2-left-column{
-	background: linear-gradient(180deg ,#6edcc4,#1aab8b);
+	background: linear-gradient(180deg ,#FF97D9,#E44F9C);
 }
 body{
     min-height: 100vh;
@@ -46,7 +46,7 @@ body{
 body.dark{
     --body-color: #E4E9F7;
     --sidebar-color: #FFF;
-    --primary-color: #695CFE;
+    --primary-color: #FF97D9;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;

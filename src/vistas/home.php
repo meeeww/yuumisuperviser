@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if(!$_SESSION["logged"]){
+    header('Location: /yuumisuperviser');
+  }
+?>
+
 <!DOCTYPE html>
 <!-- Coding by CodingLab | www.codinglabweb.com -->
 <html lang="en">

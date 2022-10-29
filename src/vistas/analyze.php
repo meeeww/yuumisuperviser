@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!$_SESSION["logged"]) {
+  header('Location: /yuumisuperviser');
+}
+?>
+
 <!DOCTYPE html>
 <!-- Coding by CodingLab | www.codinglabweb.com -->
 <html lang="en">
@@ -147,17 +154,40 @@
     <body>
       <div class="container">
 
+
         <div class="card" id="card1">
           <div class="left-column background1-left-column">
-            <h6>Positioning Map</h6>
-            <h2>Individual</h2>
+            <h6>Free</h6>
+            <h2>Game Tracker</h2>
             <i class="fa fa-github"></i>
           </div>
 
           <div class="right-column">
             <div>
-              <h4>Cooldown</h4>
-              <h6>10 Minutes</h6>
+              <h4>Game Tracker</h4>
+              <h6>v 0.1</h6>
+
+            </div>
+            <h2>Player's data</h2>
+            <p>We will get as much data as we can and analyze it for you to be
+              able to get conclussions about them.
+            </p>
+            <button class="button background1-left-column">Begin</button>
+          </div>
+
+        </div>
+
+        <div class="card" id="card2">
+          <div class="left-column background1-left-column">
+            <h6>Paid</h6>
+            <h2>Map Tracker</h2>
+            <i class="fa fa-github"></i>
+          </div>
+
+          <div class="right-column">
+            <div>
+              <h4>Map Tracker</h4>
+              <h6>v 1.0</h6>
 
             </div>
             <h2>Player's positioning</h2>
@@ -169,52 +199,15 @@
 
         </div>
 
-        <div class="card" id="card2">
-          <div class="left-column background1-left-column">
-            <h6>Positioning Map</h6>
-            <h2>Individual</h2>
-            <i class="fa fa-github"></i>
-          </div>
 
-          <div class="right-column">
-            <div>
-              <h4>Cooldown</h4>
-              <h6>10 Minutes</h6>
 
-            </div>
-            <h2>Player's positioning</h2>
-            <p>With this script you will be able to find out where the player positions the most
-              to determine the player pathing.
-            </p>
-            <button class="button background1-left-column">Begin</button>
-          </div>
-
-        </div>
-
-        <div class="card" id="card3">
-          <div class="left-column background2-left-column">
-            <h6>Programación</h6>
-            <h2>Android</h2>
-            <i class="fa fa-android" aria-hidden="true"></i>
-          </div>
-
-          <div class="right-column">
-            <div>
-              <h4>Dificultad</h4>
-              <h6>Media - Alta</h6>
-            </div>
-            <h2>Flutter en 1 año</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, sintLorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Harum, sint??</p>
-            <button class="button background2-left-column">Empezar</button>
-          </div>
-        </div>
-        <input type="text" name="playerName" id="playerName" value="software engineer" style="display:none"><br></br>
-        <input type="text" name="position" id="position" value="software engineer" style="display:none"><br></br>
-        <input type="checkbox" id="cbox1" value="first_checkbox" style="display:none"><br></br>
-        <button class="button background1-left-column" id="submit" style="display:none" onclick="crearMapa()">Begin</button>
-        <div id="mapBlue" style="display:none"></div>
-        <div id="mapRed" style="display:none"></div>
+      </div>
+      <input type="text" name="playerName" id="playerName" value="software engineer" style="display:none"><br></br>
+      <input type="text" name="position" id="position" value="software engineer" style="display:none"><br></br>
+      <input type="checkbox" id="cbox1" value="first_checkbox" style="display:none"><br></br>
+      <button class="button background1-left-column" id="submit" style="display:none" onclick="crearMapa()">Begin</button>
+      <div id="mapBlue" style="display:none"></div>
+      <div id="mapRed" style="display:none"></div>
       </div>
       <div>
 

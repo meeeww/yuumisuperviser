@@ -222,6 +222,7 @@ body.dark .sidebar li a:hover .text{
 
 .bottom-content{
     z-index: 5;
+    padding-bottom: 20%;
 }
 
 .menu-bar .mode .sun-moon{
