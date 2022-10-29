@@ -21,6 +21,8 @@
   <!----===== Boxicons CSS ===== -->
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src ="../../zergen.js"></script>
+ 
 
   <!--<title>Dashboard Sidebar Menu</title>-->
 </head>
@@ -149,7 +151,29 @@
     <body>
       <div class="container">
 
-      <div class="card">
+        <div class="card" id= "card1">
+          <div class="left-column background1-left-column">
+            <h6>Positioning Map</h6>
+            <h2>Individual</h2>
+            <i class="fa fa-github"></i>
+          </div>
+
+          <div class="right-column">
+            <div>
+              <h4>Cooldown</h4>
+              <h6>10 Minutes</h6>
+
+            </div>
+            <h2>Player's positioning</h2>
+            <p>With this script you will be able to find out where the player positions the most
+              to determine the player pathing.
+            </p>
+            <button class="button background1-left-column" onclick="cards()" >Begin</button>
+          </div>
+
+        </div>
+        
+        <div class="card" id= "card2">
           <div class="left-column background1-left-column">
             <h6>Positioning Map</h6>
             <h2>Individual</h2>
@@ -170,28 +194,8 @@
           </div>
 
         </div>
-<div class="card">
-          <div class="left-column background1-left-column">
-            <h6>Positioning Map</h6>
-            <h2>Individual</h2>
-            <i class="fa fa-github"></i>
-          </div>
 
-          <div class="right-column">
-            <div>
-              <h4>Cooldown</h4>
-              <h6>10 Minutes</h6>
-
-            </div>
-            <h2>Player's positioning</h2>
-            <p>With this script you will be able to find out where the player positions the most
-              to determine the player pathing.
-            </p>
-            <button class="button background1-left-column">Begin</button>
-          </div>
-
-        </div>
-        <div class="card">
+        <div class="card" id= "card3">
           <div class="left-column background2-left-column">
             <h6>Programación</h6>
             <h2>Android</h2>
@@ -208,12 +212,17 @@
               consectetur adipisicing elit. Harum, sint??</p>
             <button class="button background2-left-column">Empezar</button>
           </div>
-          
-
         </div>
-      </div>
 
-      <div id="map">
+      </div>
+      <div>
+        <input type="text" name="playerName" id = "playerName" value="software engineer" style = "display:none"><br></br>
+        <input type="text" name="position" id = "position" value="software engineer" style = "display:none"><br></br>
+        <input type="checkbox" id="cbox1" value="first_checkbox" style = "display:none"><br></br>
+        <button class="button background1-left-column"  id ="submit" style = "display:none" onclick = "crearMapa()">Begin</button>
+
+        <div id="map" style = "display:none"></div>
+
       </div>
 
     </body>
@@ -247,7 +256,7 @@
   });
 </script>
 <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
-<script type="text/javascript" src="../heatmap/analyze.js"></script>
+<script type="module" src="../heatmap/analyze.js"></script>
 </body>
 
 </html>

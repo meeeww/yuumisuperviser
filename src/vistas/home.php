@@ -25,7 +25,7 @@
         </span>
 
         <div class="text logo-text">
-          <span class="name">Bienvenido</span>
+          <span class="name">Welcome</span>
           <span class="rol" style="color: <?php
             switch($user->getRol()){
               case 0:
@@ -51,6 +51,9 @@
                 break;
               case 7:
                 echo "#148ff5";
+                break;
+              default:
+                echo "#edbec2";
                 break;
             }
           ?>;">
@@ -79,6 +82,9 @@
                 break;
               case 7:
                 echo "Admin";
+                break;
+              default:
+                echo "Free";
                 break;
             }
             ?>
@@ -126,7 +132,7 @@
           <li class="nav-link">
             <a href="#">
               <i class='bx bxs-injection icon'></i>
-              <span class="text nav-text">Smurfers</span>
+              <span class="text nav-text">Smurfs</span>
             </a>
           </li>
 
@@ -155,7 +161,7 @@
       </div>
 
 
-
+    
       <div class="bottom-content">
         <li class="">
           <a href="#">

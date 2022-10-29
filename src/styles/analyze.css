@@ -389,14 +389,8 @@ body.dark .home .text{
 	}
   }
 
-#map svg {
-    position: relative;
-    top: 0;
-    left: 0;
-}
-
-#map img {
+#map {
     position: absolute;
-    top: 0;
-    left: 0;   
+    top: 50px;
+    left: 0;
 }
