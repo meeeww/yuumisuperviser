@@ -13,6 +13,6 @@ function crearMapa(){
     document.getElementById("position").style.display = "none";
     document.getElementById("cbox1").style.display = "none";
     document.getElementById("playerName").style.display = "none";
-    document.getElementById("map").style.display = "inline";
-
+    document.getElementById("mapBlue").style.display = "inline";
+    document.getElementById("mapRed").style.display = "inline";
 }

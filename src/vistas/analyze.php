@@ -1,10 +1,3 @@
-<?php
-  session_start();
-  if(!$_SESSION["logged"]){
-    header('Location: /yuumisuperviser');
-  }
-?>
-
 <!DOCTYPE html>
 <!-- Coding by CodingLab | www.codinglabweb.com -->
 <html lang="en">
@@ -16,13 +9,16 @@
 
   <!----======== CSS ======== -->
   <link rel="stylesheet" href="../styles/analyze.css">
-  
+
 
   <!----===== Boxicons CSS ===== -->
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src ="../../zergen.js"></script>
- 
+  <!----===== varios ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+
+
+
 
   <!--<title>Dashboard Sidebar Menu</title>-->
 </head>
@@ -151,7 +147,7 @@
     <body>
       <div class="container">
 
-        <div class="card" id= "card1">
+        <div class="card" id="card1">
           <div class="left-column background1-left-column">
             <h6>Positioning Map</h6>
             <h2>Individual</h2>
@@ -168,12 +164,12 @@
             <p>With this script you will be able to find out where the player positions the most
               to determine the player pathing.
             </p>
-            <button class="button background1-left-column" onclick="cards()" >Begin</button>
+            <button class="button background1-left-column" onclick="cards()">Begin</button>
           </div>
 
         </div>
-        
-        <div class="card" id= "card2">
+
+        <div class="card" id="card2">
           <div class="left-column background1-left-column">
             <h6>Positioning Map</h6>
             <h2>Individual</h2>
@@ -195,7 +191,7 @@
 
         </div>
 
-        <div class="card" id= "card3">
+        <div class="card" id="card3">
           <div class="left-column background2-left-column">
             <h6>Programación</h6>
             <h2>Android</h2>
@@ -213,15 +209,17 @@
             <button class="button background2-left-column">Empezar</button>
           </div>
         </div>
-
+        <input type="text" name="playerName" id="playerName" value="software engineer" style="display:none"><br></br>
+        <input type="text" name="position" id="position" value="software engineer" style="display:none"><br></br>
+        <input type="checkbox" id="cbox1" value="first_checkbox" style="display:none"><br></br>
+        <button class="button background1-left-column" id="submit" style="display:none" onclick="crearMapa()">Begin</button>
+        <div id="mapBlue" style="display:none"></div>
+        <div id="mapRed" style="display:none"></div>
       </div>
       <div>
-        <input type="text" name="playerName" id = "playerName" value="software engineer" style = "display:none"><br></br>
-        <input type="text" name="position" id = "position" value="software engineer" style = "display:none"><br></br>
-        <input type="checkbox" id="cbox1" value="first_checkbox" style = "display:none"><br></br>
-        <button class="button background1-left-column"  id ="submit" style = "display:none" onclick = "crearMapa()">Begin</button>
 
-        <div id="map" style = "display:none"></div>
+
+
 
       </div>
 
@@ -256,7 +254,9 @@
   });
 </script>
 <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
-<script type="module" src="../heatmap/analyze.js"></script>
+<script src="../heatmap/analyze.js"></script>
+<script src="../heatmap/zergen.js"></script>
+
 </body>
 
 </html>
