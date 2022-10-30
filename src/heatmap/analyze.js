@@ -1,4 +1,4 @@
-var apiKey = "RGAPI-045f2847-60dd-45d0-8c1a-b1ac137c493c"
+var apiKey = "RGAPI-98932bde-dc08-4245-aec2-e67de686082e"
 
 var playerName = "zaskf"
 var region = "euw1"
