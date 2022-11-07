@@ -1,5 +1,13 @@
 <?php
 session_start();
+include_once '../includes/user.php';
+include_once '../includes/user_session.php';
+if (!$_SESSION["logged"]) {
+  header('Location: /yuumisuperviser');
+}
+$userSession = new UserSession();
+$user = new User();
+$user->setUser($userSession->getCurrentUser());
 
 ?>
 
@@ -29,7 +37,7 @@ session_start();
 </head>
 
 <body>
-  <nav class="sidebar close">
+<nav class="sidebar close">
     <header>
 
       <div class="image-text">
@@ -38,7 +46,7 @@ session_start();
         </span>
 
         <div class="text logo-text">
-          <span class="name">Welcome</span>
+        <span class="name">Welcome</span>
           <span class="rol" style="color: <?php
             switch($user->getRol()){
               case 0:
@@ -102,7 +110,7 @@ session_start();
             }
             ?>
             </span>
-          <span class="profession"><?php echo $user->getNombre();   ?></span>
+            <span class="profession"><?php echo $user->getNombre();?></span>
         </div>
       </div>
 
@@ -113,11 +121,9 @@ session_start();
     <div class="menu-bar">
       <div class="menu">
 
-
-
         <ul class="menu-links">
           <li class="nav-link">
-            <a href="/yuumisuperviser">
+            <a href="#">
               <i class='bx bxs-home icon'></i>
               <span class="text nav-text">Home</span>
             </a>
@@ -131,14 +137,14 @@ session_start();
           </li>
 
           <li class="nav-link">
-            <a href="#">
-              <i class='bx bxs-id-card icon'></i>
+          <a href="#">
+            <i class='bx bxs-search-alt-2 icon'></i>
               <span class="text nav-text">Tracker</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="http://localhost/YuumiSuperviser/analysis">
+          <a href="src/vistas/analyze.php">
               <i class='bx bxs-analyse icon'></i>
               <span class="text nav-text">Analysis</span>
             </a>
@@ -147,13 +153,13 @@ session_start();
           <li class="nav-link">
             <a href="#">
               <i class='bx bxs-injection icon'></i>
-              <span class="text nav-text">Smurfers</span>
+              <span class="text nav-text">Smurfs</span>
             </a>
           </li>
 
           <li class="nav-link">
             <a href="#">
-              <i class='bx bxs-calculator icon'></i>
+              <i class='bx bxs-calculator icon' ></i>
               <span class="text nav-text">Compositions</span>
             </a>
           </li>
@@ -176,7 +182,7 @@ session_start();
       </div>
 
 
-
+    
       <div class="bottom-content">
         <li class="">
           <a href="#">
@@ -185,7 +191,7 @@ session_start();
           </a>
         </li>
         <li class="cerrar-sesion">
-          <a href="../includes/logoutOtros.php">
+          <a href="src/includes/logout.php">
             <i class='bx bxs-exit icon'></i>
             <span class="text nav-text">Logout</span>
           </a>
@@ -263,13 +269,19 @@ session_start();
 
 
       </div>
-      <input type="text" name="playerName" id="playerName" value="software engineer" style="display:none"><br></br>
-      <input type="text" name="position" id="position" value="software engineer" style="display:none"><br></br>
-      <input type="checkbox" id="cbox1" value="first_checkbox" style="display:none"><br></br>
-      <button class="button background1-left-column" id="submit" style="display:none" onclick="crearMapa()">Begin</button>
-      <div id="mapBlue" style="display:none"></div>
-      <div id="mapRed" style="display:none"></div>
+        <div class = "formulario">
+          <input type="text" name="playerName" id="playerName" value="software engineer" style="display:none"><br></br>
+          <input type="text" name="position" id="position" value="software engineer" style="display:none"><br></br>
+          <input type="checkbox" id="cbox1" value="first_checkbox" style="display:none"><br></br>
+          <button class="button2 background1-left-column2" id="submit" style="display:none" onclick="crearMapa()">Begin</button>
+          
+        </div>
+        
       </div>
+      <div class = "mapas">
+      <div id="mapBlue" style="display:none"></div>
+          <div id="mapRed" style="display:none"></div>
+          </div>
       <div>
 
 

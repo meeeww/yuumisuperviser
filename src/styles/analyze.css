@@ -27,6 +27,9 @@
 .background1-left-column{
 	background: linear-gradient(180deg,#FF97D9,#E44F9C);
 }
+.background1-left-column2{
+	background: linear-gradient(180deg,#FF97D9,#E44F9C);
+}
 
 
 .background2-left-column{
@@ -172,7 +175,7 @@ body.dark .sidebar header .toggle{
 }
 
 .sidebar .menu{
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .sidebar li a{
@@ -200,16 +203,29 @@ body.dark .sidebar li a:hover .text{
     color: var(--text-color);
 }
 
+.menu{
+    overflow-y: scroll;
+}
+
+.menu::-webkit-scrollbar{
+    display: none;
+}
+
+
 .sidebar .menu-bar{
     height: calc(100% - 55px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow-y: scroll;
+    
 }
 .menu-bar::-webkit-scrollbar{
     display: none;
 }
+.mode{
+    margin-bottom: 20px;
+}
+
 .sidebar .menu-bar .mode{
     border-radius: 6px;
     background-color: var(--primary-color-light);
@@ -299,14 +315,15 @@ body.dark .home .text{
 }
 
 .container{
+    padding-top: 110px;
 	justify-content: center;
-	height: 100vh;
-    align-items: center;
+	height: 40%;
     grid-template-columns: repeat(2, 1fr);
     display: grid;
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 5%;
+    margin-top: 0%;
+    margin-bottom: -500px;
 }
 
 .card {
@@ -330,6 +347,11 @@ body.dark .home .text{
 	letter-spacing: .1rem;
 	margin: 1rem 0;
 	color: var(black-text);
+}
+
+.formulario{
+    padding-top: 400px;
+    padding-left: 500px;
 }
 
 .left-column {	
@@ -377,6 +399,28 @@ body.dark .home .text{
 	align-self: flex-end;
 }
 
+.button2 {
+	border-radius: 3rem;
+    margin-top: 0;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: var(--white-text);
+	font-size: 1.2rem;
+	padding: .8rem 1.5rem;
+	letter-spacing: .1rem;
+	align-self: flex-end;
+}
+
+.background1-left-column2 {
+	border-radius: 3rem;
+    margin-top: 0;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: var(--white-text);
+	font-size: 1.2rem;
+	padding: .8rem 1.5rem;
+	letter-spacing: .1rem;
+	align-self: flex-end;
+}
+
 /*media queries*/
 
 @media (max-width: 1030px) {
@@ -389,8 +433,13 @@ body.dark .home .text{
 	}
   }
 
+  .mapas{
+      position: absolute;
+      padding-top: 50px;
+  }
+
 #map {
     position: absolute;
-    top: 50px;
+    top: 0px;
     left: 0;
 }

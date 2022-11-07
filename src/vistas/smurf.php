@@ -1,8 +1,14 @@
 <?php
 session_start();
+include_once '../includes/user.php';
+include_once '../includes/user_session.php';
 if (!$_SESSION["logged"]) {
   header('Location: /yuumisuperviser');
 }
+$userSession = new UserSession();
+$user = new User();
+$user->setUser($userSession->getCurrentUser());
+
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +46,71 @@ if (!$_SESSION["logged"]) {
         </span>
 
         <div class="text logo-text">
-          <span class="name">Yuumi Superviser</span>
-          <span class="profession">LoL Scouter</span>
+        <span class="name">Welcome</span>
+          <span class="rol" style="color: <?php
+            switch($user->getRol()){
+              case 0:
+                echo "#edbec2";
+                break;
+              case 1:
+                echo "#ed8c94";
+                break;
+              case 2:
+                echo "#eb50a2";
+                break;
+              case 3:
+                echo "#f72d37";
+                break;
+              case 4:
+                echo "#fa000c";
+                break;
+              case 5:
+                echo "#6e0308";
+                break;
+              case 6:
+                echo "#26bda1";
+                break;
+              case 7:
+                echo "#148ff5";
+                break;
+              default:
+                echo "#edbec2";
+                break;
+            }
+          ?>;">
+            <?php
+            switch($user->getRol()){
+              case 0:
+                echo "Free";
+                break;
+              case 1:
+                echo "Verified";
+                break;
+              case 2:
+                echo "Member";
+                break;
+              case 3:
+                echo "Player";
+                break;
+              case 4:
+                echo "Coach";
+                break;
+              case 5:
+                echo "Team";
+                break;
+              case 6:
+                echo "Tester";
+                break;
+              case 7:
+                echo "Admin";
+                break;
+              default:
+                echo "Free";
+                break;
+            }
+            ?>
+            </span>
+            <span class="profession"><?php echo $user->getNombre();?></span>
         </div>
       </div>
 
@@ -52,11 +121,9 @@ if (!$_SESSION["logged"]) {
     <div class="menu-bar">
       <div class="menu">
 
-
-
         <ul class="menu-links">
           <li class="nav-link">
-            <a href="/yuumisuperviser">
+            <a href="#">
               <i class='bx bxs-home icon'></i>
               <span class="text nav-text">Home</span>
             </a>
@@ -70,14 +137,14 @@ if (!$_SESSION["logged"]) {
           </li>
 
           <li class="nav-link">
-            <a href="#">
-              <i class='bx bxs-id-card icon'></i>
+          <a href="#">
+            <i class='bx bxs-search-alt-2 icon'></i>
               <span class="text nav-text">Tracker</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="http://localhost/YuumiSuperviser/analysis">
+          <a href="src/vistas/analyze.php">
               <i class='bx bxs-analyse icon'></i>
               <span class="text nav-text">Analysis</span>
             </a>
@@ -86,13 +153,13 @@ if (!$_SESSION["logged"]) {
           <li class="nav-link">
             <a href="#">
               <i class='bx bxs-injection icon'></i>
-              <span class="text nav-text">Smurfers</span>
+              <span class="text nav-text">Smurfs</span>
             </a>
           </li>
 
           <li class="nav-link">
             <a href="#">
-              <i class='bx bxs-calculator icon'></i>
+              <i class='bx bxs-calculator icon' ></i>
               <span class="text nav-text">Compositions</span>
             </a>
           </li>
@@ -115,7 +182,7 @@ if (!$_SESSION["logged"]) {
       </div>
 
 
-
+    
       <div class="bottom-content">
         <li class="">
           <a href="#">
@@ -124,7 +191,7 @@ if (!$_SESSION["logged"]) {
           </a>
         </li>
         <li class="cerrar-sesion">
-          <a href="../includes/logoutOtros.php">
+          <a href="src/includes/logout.php">
             <i class='bx bxs-exit icon'></i>
             <span class="text nav-text">Logout</span>
           </a>

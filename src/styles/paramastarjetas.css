@@ -312,14 +312,16 @@ body.dark .home .text{
 }
 
 .container{
+    padding-top: 10px;
 	justify-content: center;
-	height: 100vh;
-    align-items: center;
+	height: 100%;
+    background-color: red;
     grid-template-columns: repeat(2, 1fr);
     display: grid;
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 5%;
+    margin-top: 0%;
+    margin-bottom: 25px;
 }
 
 .card {
