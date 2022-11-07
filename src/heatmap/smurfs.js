@@ -66,7 +66,6 @@ const getPlayerId = async (playerName, region, apiKey) => {
         });
 
         let amigos = {}
-        let amigosCompleto = {}
 
         for(let i =0; i < jugadoresJugados.length; i++){ 
             if (amigos[jugadoresJugados[i]]){

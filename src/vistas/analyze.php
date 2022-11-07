@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 ?>
 
@@ -38,15 +38,8 @@
         </span>
 
         <div class="text logo-text">
-        <span class="name">Welcome</span>
-          <span class="rol" style="color: #edbec2<?php
-          if ($_SESSION["logged"]) {
-            session_start();
-            include_once '../includes/user.php';
-          include_once '../includes/user_session.php';
-          } else {
-            header('Location: /yuumisuperviser');
-          }
+          <span class="name">Welcome</span>
+          <span class="rol" style="color: <?php
             switch($user->getRol()){
               case 0:
                 echo "#edbec2";
@@ -76,13 +69,8 @@
                 echo "#edbec2";
                 break;
             }
-echo ">";
-
-            if ($_SESSION["logged"]) {
-              include_once '../includes/user.php';
-            include_once '../includes/user_session.php';
-            
-            }
+          ?>;">
+            <?php
             switch($user->getRol()){
               case 0:
                 echo "Free";
@@ -112,7 +100,7 @@ echo ">";
                 echo "Free";
                 break;
             }
-          ?>
+            ?>
             </span>
           <span class="profession"><?php echo $user->getNombre();   ?></span>
         </div>
