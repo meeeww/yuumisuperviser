@@ -1,0 +1,2 @@
+quitar el grid del container principal
+añadir un container para los cards

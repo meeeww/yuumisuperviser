@@ -37,7 +37,7 @@ $user->setUser($userSession->getCurrentUser());
 </head>
 
 <body>
-<nav class="sidebar close">
+  <nav class="sidebar close">
     <header>
 
       <div class="image-text">
@@ -46,40 +46,41 @@ $user->setUser($userSession->getCurrentUser());
         </span>
 
         <div class="text logo-text">
-        <span class="name">Welcome</span>
-          <span class="rol" style="color: <?php
-            switch($user->getRol()){
-              case 0:
-                echo "#edbec2";
-                break;
-              case 1:
-                echo "#ed8c94";
-                break;
-              case 2:
-                echo "#eb50a2";
-                break;
-              case 3:
-                echo "#f72d37";
-                break;
-              case 4:
-                echo "#fa000c";
-                break;
-              case 5:
-                echo "#6e0308";
-                break;
-              case 6:
-                echo "#26bda1";
-                break;
-              case 7:
-                echo "#148ff5";
-                break;
-              default:
-                echo "#edbec2";
-                break;
-            }
+          <span class="name">Welcome</span>
+          <span class="rol" style="color: 
+          <?php
+          switch ($user->getRol()) {
+            case 0:
+              echo "#edbec2";
+              break;
+            case 1:
+              echo "#ed8c94";
+              break;
+            case 2:
+              echo "#eb50a2";
+              break;
+            case 3:
+              echo "#f72d37";
+              break;
+            case 4:
+              echo "#fa000c";
+              break;
+            case 5:
+              echo "#6e0308";
+              break;
+            case 6:
+              echo "#26bda1";
+              break;
+            case 7:
+              echo "#148ff5";
+              break;
+            default:
+              echo "#edbec2";
+              break;
+          }
           ?>;">
             <?php
-            switch($user->getRol()){
+            switch ($user->getRol()) {
               case 0:
                 echo "Free";
                 break;
@@ -109,8 +110,8 @@ $user->setUser($userSession->getCurrentUser());
                 break;
             }
             ?>
-            </span>
-            <span class="profession"><?php echo $user->getNombre();?></span>
+          </span>
+          <span class="profession"><?php echo $user->getNombre(); ?></span>
         </div>
       </div>
 
@@ -137,14 +138,14 @@ $user->setUser($userSession->getCurrentUser());
           </li>
 
           <li class="nav-link">
-          <a href="#">
-            <i class='bx bxs-search-alt-2 icon'></i>
+            <a href="#">
+              <i class='bx bxs-search-alt-2 icon'></i>
               <span class="text nav-text">Tracker</span>
             </a>
           </li>
 
           <li class="nav-link">
-          <a href="src/vistas/analyze.php">
+            <a href="src/vistas/analyze.php">
               <i class='bx bxs-analyse icon'></i>
               <span class="text nav-text">Analysis</span>
             </a>
@@ -159,7 +160,7 @@ $user->setUser($userSession->getCurrentUser());
 
           <li class="nav-link">
             <a href="#">
-              <i class='bx bxs-calculator icon' ></i>
+              <i class='bx bxs-calculator icon'></i>
               <span class="text nav-text">Compositions</span>
             </a>
           </li>
@@ -182,7 +183,7 @@ $user->setUser($userSession->getCurrentUser());
       </div>
 
 
-    
+
       <div class="bottom-content">
         <li class="">
           <a href="#">
@@ -220,8 +221,6 @@ $user->setUser($userSession->getCurrentUser());
 
     <body>
       <div class="container">
-
-
         <div class="card" id="card1">
           <div class="left-column background1-left-column">
             <h6>Free</h6>
@@ -266,22 +265,67 @@ $user->setUser($userSession->getCurrentUser());
 
         </div>
 
-
-
-      </div>
-        <div class = "formulario">
-          <input type="text" name="playerName" id="playerName" value="software engineer" style="display:none"><br></br>
-          <input type="text" name="position" id="position" value="software engineer" style="display:none"><br></br>
-          <input type="checkbox" id="cbox1" value="first_checkbox" style="display:none"><br></br>
-          <button class="button2 background1-left-column2" id="submit" style="display:none" onclick="crearMapa()">Begin</button>
-          
-        </div>
-        
-      </div>
-      <div class = "mapas">
-      <div id="mapBlue" style="display:none"></div>
-          <div id="mapRed" style="display:none"></div>
+        <div class="box" id="cajita" style="display:none">
+          <div class="inputBox">
+            <input type="usuario" id="summoner" class="input" name="summoner" required="required">
+            <span>Summoner's Name</i></span>
+            <i></i>
           </div>
+          <div class="inputBox">
+            <input type="number" max="100" min="1" value="10" id="partidas" class="input" name="partidas" required="required">
+            <span>Number of matches (0-100)</i></span>
+            <i></i>
+          </div>
+          <div class="inputBox">
+            <input type="number" max="60" min="0" value="10" id="minutosPartida" class="input" name="partidas" required="required">
+            <span>Max. Minutes of game</i></span>
+            <i></i>
+          </div>
+          <div class="inputBox">
+            <select class="form-select" type="text" name="position" id="position" value="TOPLANE">
+              <option value="TOP">Toplaner</option>
+              <option value="JUNGLE">Jungler</option>
+              <option value="MIDDLE">Midlaner</option>
+              <option value="BOTTOM">ADC</option>
+              <option value="UTILITY">Support</option>
+            </select>
+          </div>
+          <div class="inputBox">
+            <select class="form-select" type="text" name="position" id="region" value="TOPLANE">
+              <option value="EUW1">Europe West</option>
+              <option value="EUN1">Europe North & East</option>
+              <option value="NA1">North America</option>
+              <option value="BR1">Brasil</option>
+              <option value="JP1">Japan</option>
+              <option value="LA1">North LATAM</option>
+              <option value="LA2">South LATAM</option>
+              <option value="OC1">Oceania</option>
+              <option value="RU">Russia</option>
+              <option value="TR1">Turkey</option>
+              <option value="KR">Korea</option>
+            </select>
+          </div>
+          <button type="botoncito" class="botoncito" onclick="analyze()">Begin</button>
+
+
+        </div>
+        <div class="mapas" id="mapas">
+        </div>
+
+      </div>
+      <div class="loader" id="cargando" style="display:none">
+        <span id="serverTime">Starting...</span>
+      </div>
+
+
+
+
+
+      </div>
+
+
+
+
       <div>
 
 
