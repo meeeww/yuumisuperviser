@@ -220,7 +220,7 @@ $user->setUser($userSession->getCurrentUser());
     <div class="text">Yuumi Superviser</div>
 
     <body>
-      <div class="container">
+      <div class="container" id="container">
         <div class="card" id="card1">
           <div class="left-column background1-left-column">
             <h6>Free</h6>
@@ -265,54 +265,57 @@ $user->setUser($userSession->getCurrentUser());
 
         </div>
 
-        <div class="box" id="cajita" style="display:none">
-          <div class="inputBox">
-            <input type="usuario" id="summoner" class="input" name="summoner" required="required">
-            <span>Summoner's Name</i></span>
-            <i></i>
-          </div>
-          <div class="inputBox">
-            <input type="number" max="100" min="1" value="10" id="partidas" class="input" name="partidas" required="required">
-            <span>Number of matches (0-100)</i></span>
-            <i></i>
-          </div>
-          <div class="inputBox">
-            <input type="number" max="60" min="0" value="10" id="minutosPartida" class="input" name="partidas" required="required">
-            <span>Max. Minutes of game</i></span>
-            <i></i>
-          </div>
-          <div class="inputBox">
-            <select class="form-select" type="text" name="position" id="position" value="TOPLANE">
-              <option value="TOP">Toplaner</option>
-              <option value="JUNGLE">Jungler</option>
-              <option value="MIDDLE">Midlaner</option>
-              <option value="BOTTOM">ADC</option>
-              <option value="UTILITY">Support</option>
-            </select>
-          </div>
-          <div class="inputBox">
-            <select class="form-select" type="text" name="position" id="region" value="TOPLANE">
-              <option value="EUW1">Europe West</option>
-              <option value="EUN1">Europe North & East</option>
-              <option value="NA1">North America</option>
-              <option value="BR1">Brasil</option>
-              <option value="JP1">Japan</option>
-              <option value="LA1">North LATAM</option>
-              <option value="LA2">South LATAM</option>
-              <option value="OC1">Oceania</option>
-              <option value="RU">Russia</option>
-              <option value="TR1">Turkey</option>
-              <option value="KR">Korea</option>
-            </select>
-          </div>
-          <button type="botoncito" class="botoncito" onclick="analyze()">Begin</button>
 
 
-        </div>
-        <div class="mapas" id="mapas">
-        </div>
 
       </div>
+
+      </div>
+      <div class="box" id="cajita" style="display:none">
+        <div class="inputBox">
+          <input type="usuario" id="summoner" class="input" name="summoner" required="required">
+          <span>Summoner's Name</i></span>
+          <i></i>
+        </div>
+        <div class="inputBox">
+          <input type="number" max="100" min="1" value="10" id="partidas" class="input" name="partidas" required="required">
+          <span>Number of matches (0-100)</i></span>
+          <i></i>
+        </div>
+        <div class="inputBox">
+          <input type="number" max="60" min="0" value="10" id="minutosPartida" class="input" name="partidas" required="required">
+          <span>Max. Minutes of game</i></span>
+          <i></i>
+        </div>
+        <div class="inputBox">
+          <select class="form-select" type="text" name="position" id="position" value="TOPLANE">
+            <option value="TOP">Toplaner</option>
+            <option value="JUNGLE">Jungler</option>
+            <option value="MIDDLE">Midlaner</option>
+            <option value="BOTTOM">ADC</option>
+            <option value="UTILITY">Support</option>
+          </select>
+        </div>
+        <div class="inputBox">
+          <select class="form-select" type="text" name="position" id="region" value="TOPLANE">
+            <option value="EUW1">Europe West</option>
+            <option value="EUN1">Europe North & East</option>
+            <option value="NA1">North America</option>
+            <option value="BR1">Brasil</option>
+            <option value="JP1">Japan</option>
+            <option value="LA1">North LATAM</option>
+            <option value="LA2">South LATAM</option>
+            <option value="OC1">Oceania</option>
+            <option value="RU">Russia</option>
+            <option value="TR1">Turkey</option>
+            <option value="KR">Korea</option>
+          </select>
+        </div>
+        <button type="botoncito" class="botoncito" onclick="analyze()">Begin</button>
+
+
+      </div>
+
       <div class="loader" id="cargando" style="display:none">
         <span id="serverTime">Starting...</span>
       </div>
@@ -322,16 +325,26 @@ $user->setUser($userSession->getCurrentUser());
 
 
       </div>
+      <div class="range" id="range" style="display:none">
+        <div class="sliderValue">
+          <span id="spanId">100</span>
+        </div>
+        <div class="field">
+          <div class="value left">
+            0</div>
+          <input type="range" min="10" max="200" value="100" steps="1" id="inputId">
+          <div class="value right">
+            200</div>
+        </div>
+
+
+
+        <div>
 
 
 
 
-      <div>
-
-
-
-
-      </div>
+        </div>
 
     </body>
 
@@ -361,6 +374,17 @@ $user->setUser($userSession->getCurrentUser());
       modeText.innerText = "Dark mode";
 
     }
+  });
+  const slideValue = document.getElementById("spanId");
+  const inputSlider = document.getElementById("inputId");
+  inputSlider.oninput = (() => {
+    let value = inputSlider.value;
+    slideValue.textContent = value;
+    slideValue.style.left = (value / 2) + "%";
+    slideValue.classList.add("show");
+  });
+  inputSlider.onblur = (() => {
+    slideValue.classList.remove("show");
   });
 </script>
 <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>

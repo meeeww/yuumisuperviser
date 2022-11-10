@@ -1,5 +1,5 @@
 function analyze() {
-    var apiKey = "RGAPI-a9568e23-ac17-4564-a531-5a8660dc08a4"
+    var apiKey = "RGAPI-328602b9-1647-47a3-8266-7481cffcf146"
 
     var playerName = document.getElementById("summoner").value;
     var region = document.getElementById("region").value;
@@ -55,7 +55,7 @@ function analyze() {
     }
     document.getElementById("cajita").style.display = "none";
     document.getElementById("cargando").style.display = "flex";
-    document.getElementById("mapas").style.display = "grid";
+    
 
     document.getElementById("serverTime").innerHTML = porcentaje + "%";
 
@@ -141,11 +141,11 @@ function analyze() {
 
             for (var i = 0; i < minutosPartida; i++) {
                 var div = document.createElement("mapBlue" + i);
-                document.getElementById("mapas").appendChild(div);
-                div.style.width = "100%";
+                document.getElementById("container").appendChild(div);
+                div.style.width = "512px";
                 div.style.height = "100%";
                 div.style.color = "white";
-                div.innerHTML = "Minute " + i + ", BlueSide";
+                //div.innerHTML = "Minute " + i + ", BlueSide";
                 div.id = "mapBlue" + i
 
                 domain = {
@@ -195,14 +195,23 @@ function analyze() {
                         }
                     })
                     .attr('r', 5)
+                    .attr('fill', "blue")
+                    .attr('fill-opacity', function(d) {
+                        if (d[0] != i) {
+                            return "0%"
+                        } else {
+                            return "100%"
+                        }
+                    })
                     .attr('class', 'kills');
                 ///////
                 var div = document.createElement("mapRed" + i);
-                document.getElementById("mapas").appendChild(div);
-                div.style.width = "100%";
+                document.getElementById("container").appendChild(div);
+                div.style.width = "512px";
                 div.style.height = "100%";
                 div.style.color = "white";
-                div.innerHTML = "Minute " + i + ", RedSide";
+
+                //div.innerHTML = "Minute " + i + ", RedSide";
                 div.id = "mapRed" + i
 
                 domain = {
@@ -252,11 +261,20 @@ function analyze() {
                         }
                     })
                     .attr('r', 5)
+                    .attr('fill', "red")
+                    .attr('fill-opacity', function(d) {
+                        if (d[0] != i) {
+                            return "0%"
+                        } else {
+                            return "100%"
+                        }
+                    })
                     .attr('class', 'kills');
             }
 
-
             document.getElementById("cargando").style.display = "none";
+            document.getElementById("range").style.display = "block";
+
         } catch (error) {
             document.getElementById("serverTime").innerHTML = "Error. Contact support.";
             console.log(error)
