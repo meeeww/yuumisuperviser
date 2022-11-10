@@ -327,14 +327,14 @@ $user->setUser($userSession->getCurrentUser());
       </div>
       <div class="range" id="range" style="display:none">
         <div class="sliderValue">
-          <span id="spanId">100</span>
+          <span id="spanId">0</span>
         </div>
         <div class="field">
           <div class="value left">
-            0</div>
-          <input type="range" min="10" max="200" value="100" steps="1" id="inputId">
-          <div class="value right">
-            200</div>
+            1</div>
+          <input type="range" min="0" max="200" value="0" steps="1" id="inputId">
+          <div class="value right" id="value right">
+            10</div>
         </div>
 
 

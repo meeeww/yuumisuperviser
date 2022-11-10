@@ -55,11 +55,11 @@ function analyze() {
     }
     document.getElementById("cajita").style.display = "none";
     document.getElementById("cargando").style.display = "flex";
-    
+
 
     document.getElementById("serverTime").innerHTML = porcentaje + "%";
 
-    const getPlayerId = async(playerName, region, apiKey) => {
+    const getPlayerId = async (playerName, region, apiKey) => {
         console.log(playerName)
         document.getElementById("serverTime").innerHTML = porcentaje + "%";
         try {
@@ -76,11 +76,11 @@ function analyze() {
                 const checkear = await resCheckear.json()
                 const resTimeline = await fetch("https://" + regionPartidas + ".api.riotgames.com/lol/match/v5/matches/" + partidas[x] + "/timeline?api_key=" + apiKey)
                 const timeline = await resTimeline.json()
-                    //const timeline = await client.matches.fetchMatchTimeline(partidas[x])
-                    //console.log(partidas[x])
-                    //console.log(checkear.teams.get("blue").participants[1].summoner)//.client.id
-                    //console.log()
-                    //timeline.frames.forEach(evento => console.log(evento));
+                //const timeline = await client.matches.fetchMatchTimeline(partidas[x])
+                //console.log(partidas[x])
+                //console.log(checkear.teams.get("blue").participants[1].summoner)//.client.id
+                //console.log()
+                //timeline.frames.forEach(evento => console.log(evento));
 
 
                 lado = "ninguno"
@@ -184,19 +184,19 @@ function analyze() {
                 svg.append('svg:g').selectAll("circle")
                     .data(puntosblue)
                     .enter().append("svg:circle")
-                    .attr('cx', function(d) {
+                    .attr('cx', function (d) {
                         if (d[0] == i) {
                             return xScale(d[1])
                         }
                     })
-                    .attr('cy', function(d) {
+                    .attr('cy', function (d) {
                         if (d[0] == i) {
                             return xScale(d[2])
                         }
                     })
                     .attr('r', 5)
                     .attr('fill', "blue")
-                    .attr('fill-opacity', function(d) {
+                    .attr('fill-opacity', function (d) {
                         if (d[0] != i) {
                             return "0%"
                         } else {
@@ -250,19 +250,19 @@ function analyze() {
                 svg.append('svg:g').selectAll("circle")
                     .data(puntosred)
                     .enter().append("svg:circle")
-                    .attr('cx', function(d) {
+                    .attr('cx', function (d) {
                         if (d[0] == i) {
                             return xScale(d[1])
                         }
                     })
-                    .attr('cy', function(d) {
+                    .attr('cy', function (d) {
                         if (d[0] == i) {
                             return yScale(d[2])
                         }
                     })
                     .attr('r', 5)
                     .attr('fill', "red")
-                    .attr('fill-opacity', function(d) {
+                    .attr('fill-opacity', function (d) {
                         if (d[0] != i) {
                             return "0%"
                         } else {
@@ -274,7 +274,31 @@ function analyze() {
 
             document.getElementById("cargando").style.display = "none";
             document.getElementById("range").style.display = "block";
+            document.getElementById("inputId").max = minutosPartida - 1;
+            document.getElementById("value right").innerHTML = minutosPartida;
 
+            for (var i = 0; i < minutosPartida; i++) {
+                document.getElementById("mapBlue" + i).style.display = "none";
+                document.getElementById("mapRed" + i).style.display = "none";
+            }
+            document.getElementById("mapBlue0").style.display = "flex";
+            document.getElementById("mapRed0").style.display = "flex";
+
+            const inputSlider = document.getElementById("inputId");
+            inputSlider.oninput = (() => {
+                let value = inputSlider.value;
+                let maxValue = document.getElementById("inputId").max
+                
+                for(var i = 0; i < maxValue; i++){
+                    document.getElementById("mapBlue"+i).style.display = "none";
+                    document.getElementById("mapRed"+i).style.display = "none";
+                }
+                console.log(value)
+                console.log(i)
+                document.getElementById("mapBlue"+value).style.display = "flex";
+                document.getElementById("mapRed"+value).style.display = "flex";
+                
+            });
         } catch (error) {
             document.getElementById("serverTime").innerHTML = "Error. Contact support.";
             console.log(error)
