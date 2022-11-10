@@ -751,7 +751,7 @@ form-select::-ms-expand {
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 .range {
-    margin-top: 1%;
+    margin-top: 5%;
     height: 80px;
     width: 380px;
     margin: auto;
