@@ -1,10 +1,10 @@
 function analyze() {
-    var apiKey = "RGAPI-328602b9-1647-47a3-8266-7481cffcf146"
+    var apiKey = "RGAPI-b6fb1fce-f80f-4e7f-9d6b-44e292a9a6e7"
 
     var playerName = document.getElementById("summoner").value;
     var region = document.getElementById("region").value;
     var regionPartidas = "europe"
-    var tipoPartidas = "ranked"
+    var tipoPartidas = document.getElementById("tipoPartidas").value;
     var numeroPartidas = document.getElementById("partidas").value;
     var checkearPosicion = true //Si está en 1, la línea de abajo servirá
     var posicion = document.getElementById("position").value; //TOP/JUNGLE/MIDDLE/BOTTOM/UTILITY
@@ -59,7 +59,7 @@ function analyze() {
 
     document.getElementById("serverTime").innerHTML = porcentaje + "%";
 
-    const getPlayerId = async (playerName, region, apiKey) => {
+    const getPlayerId = async(playerName, region, apiKey) => {
         console.log(playerName)
         document.getElementById("serverTime").innerHTML = porcentaje + "%";
         try {
@@ -76,11 +76,11 @@ function analyze() {
                 const checkear = await resCheckear.json()
                 const resTimeline = await fetch("https://" + regionPartidas + ".api.riotgames.com/lol/match/v5/matches/" + partidas[x] + "/timeline?api_key=" + apiKey)
                 const timeline = await resTimeline.json()
-                //const timeline = await client.matches.fetchMatchTimeline(partidas[x])
-                //console.log(partidas[x])
-                //console.log(checkear.teams.get("blue").participants[1].summoner)//.client.id
-                //console.log()
-                //timeline.frames.forEach(evento => console.log(evento));
+                    //const timeline = await client.matches.fetchMatchTimeline(partidas[x])
+                    //console.log(partidas[x])
+                    //console.log(checkear.teams.get("blue").participants[1].summoner)//.client.id
+                    //console.log()
+                    //timeline.frames.forEach(evento => console.log(evento));
 
 
                 lado = "ninguno"
@@ -149,13 +149,13 @@ function analyze() {
                 div.id = "mapBlue" + i
 
                 domain = {
-                    min: { x: -120, y: -120 },
-                    max: { x: 14870, y: 14980 }
-                }
-                width = 512
-                height = 512
-                bg = "https://s3-us-west-1.amazonaws.com/riot-developer-portal/docs/map11.png"
-                var xScale, yScale, svg;
+                        min: { x: -120, y: -120 },
+                        max: { x: 14870, y: 14980 }
+                    },
+                    width = 512,
+                    height = 512,
+                    bg = "https://s3-us-west-1.amazonaws.com/riot-developer-portal/docs/map11.png",
+                    xScale, yScale, svg;
 
                 color = d3.scale.linear()
                     .domain([0, 3])
@@ -184,19 +184,19 @@ function analyze() {
                 svg.append('svg:g').selectAll("circle")
                     .data(puntosblue)
                     .enter().append("svg:circle")
-                    .attr('cx', function (d) {
+                    .attr('cx', function(d) {
                         if (d[0] == i) {
                             return xScale(d[1])
                         }
                     })
-                    .attr('cy', function (d) {
+                    .attr('cy', function(d) {
                         if (d[0] == i) {
-                            return xScale(d[2])
+                            return yScale(d[2])
                         }
                     })
                     .attr('r', 5)
                     .attr('fill', "blue")
-                    .attr('fill-opacity', function (d) {
+                    .attr('fill-opacity', function(d) {
                         if (d[0] != i) {
                             return "0%"
                         } else {
@@ -250,19 +250,19 @@ function analyze() {
                 svg.append('svg:g').selectAll("circle")
                     .data(puntosred)
                     .enter().append("svg:circle")
-                    .attr('cx', function (d) {
+                    .attr('cx', function(d) {
                         if (d[0] == i) {
                             return xScale(d[1])
                         }
                     })
-                    .attr('cy', function (d) {
+                    .attr('cy', function(d) {
                         if (d[0] == i) {
                             return yScale(d[2])
                         }
                     })
                     .attr('r', 5)
                     .attr('fill', "red")
-                    .attr('fill-opacity', function (d) {
+                    .attr('fill-opacity', function(d) {
                         if (d[0] != i) {
                             return "0%"
                         } else {
@@ -288,16 +288,16 @@ function analyze() {
             inputSlider.oninput = (() => {
                 let value = inputSlider.value;
                 let maxValue = document.getElementById("inputId").max
-                
-                for(var i = 0; i < maxValue; i++){
-                    document.getElementById("mapBlue"+i).style.display = "none";
-                    document.getElementById("mapRed"+i).style.display = "none";
+
+                for (var i = 0; i <= maxValue; i++) {
+                    document.getElementById("mapBlue" + i).style.display = "none";
+                    document.getElementById("mapRed" + i).style.display = "none";
                 }
                 console.log(value)
                 console.log(i)
-                document.getElementById("mapBlue"+value).style.display = "flex";
-                document.getElementById("mapRed"+value).style.display = "flex";
-                
+                document.getElementById("mapBlue" + value).style.display = "flex";
+                document.getElementById("mapRed" + value).style.display = "flex";
+
             });
         } catch (error) {
             document.getElementById("serverTime").innerHTML = "Error. Contact support.";

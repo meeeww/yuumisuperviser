@@ -297,6 +297,13 @@ $user->setUser($userSession->getCurrentUser());
           </select>
         </div>
         <div class="inputBox">
+          <select class="form-select" type="text" name="position" id="tipoPartidas" value="TOPLANE">
+            <option value="ranked">Solo And Flex Ranked</option>
+            <option value="normal">Draft Pick</option>
+            <option value="tourney">Tourney (MAY NOT WORK PROPERLY)</option>
+          </select>
+        </div>
+        <div class="inputBox">
           <select class="form-select" type="text" name="position" id="region" value="TOPLANE">
             <option value="EUW1">Europe West</option>
             <option value="EUN1">Europe North & East</option>
@@ -312,7 +319,7 @@ $user->setUser($userSession->getCurrentUser());
           </select>
         </div>
         <button type="botoncito" class="botoncito" onclick="analyze()">Begin</button>
-
+        
 
       </div>
 

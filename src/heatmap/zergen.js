@@ -10,3 +10,12 @@ function crearMapa() {
     document.getElementById("mapBlue").style.display = "inline";
     document.getElementById("mapRed").style.display = "inline";
 }
+
+function settings(tipo) {
+    document.getElementById("account").style.display = "none";
+    document.getElementById("password").style.display = "none";
+    document.getElementById("security").style.display = "none";
+    document.getElementById("application").style.display = "none";
+    document.getElementById("notification").style.display = "none";
+    document.getElementById(tipo).style.display = "block";
+}

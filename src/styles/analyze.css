@@ -316,7 +316,7 @@ body.dark .switch::before {
 .home .text {
     font-size: 30px;
     font-weight: 500;
-    height: 10%;
+    height: auto;
     color: var(--text-color);
     padding: 12px 60px;
 }
@@ -333,7 +333,7 @@ body.dark .home .text {
 
 .container {
     height: auto;
-    margin: 0 auto;
+    margin: 10 auto;
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
     display: grid;
