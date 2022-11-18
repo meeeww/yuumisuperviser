@@ -1,6 +1,5 @@
 function cards() {
     document.getElementById("card1").style.display = "none";
-    document.getElementById("card2").style.display = "none";
     document.getElementById("cajita").style.display = "inline";
 }
 

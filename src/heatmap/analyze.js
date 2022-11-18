@@ -1,5 +1,5 @@
 function analyze() {
-    var apiKey = "RGAPI-b6fb1fce-f80f-4e7f-9d6b-44e292a9a6e7"
+    var apiKey = "RGAPI-540a577e-c73a-4d0c-b55f-8239c6606860"
 
     var playerName = document.getElementById("summoner").value;
     var region = document.getElementById("region").value;
